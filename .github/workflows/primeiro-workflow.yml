@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - 'README.md'
   workflow_dispatch:
 
 jobs:
@@ -14,11 +16,11 @@ jobs:
       - name: Checkout do código
         uses: actions/checkout@v4
         
-      - name: Imprime mensagem de boas-vindas
-        run: echo "Iniciando meu primeiro job!"
+      - name: Exibe RA e Nome
+        run: echo "6324696 - Natan Borges Leme"
         
       - name: Mostra o diretório de trabalho
         run: pwd
         
-      - name: Lista arquivos no runner
-        run: ls -la
+      - name: Mostra nome do repositório
+        run: echo "Nome do repositório - ${{ github.repository }}"
